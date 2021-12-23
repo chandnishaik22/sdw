@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include,url
 
 import superduper
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('superduper.urls')),
+    url('', include('data.urls')),
     path('',include('https://api.github.com/search/users?q=python&page=2'))
 ]
